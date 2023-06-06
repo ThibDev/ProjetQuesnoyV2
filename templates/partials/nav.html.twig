@@ -1,0 +1,80 @@
+<header>
+    <nav id="pc">
+        <ul>
+            <div class="logos">
+                <a href="{{ path('homepage') }}"><img class="logo1" src="{{ asset('assets/static/image/Logo.png') }}"
+                        alt="Logo1"></a>
+                <a href="{{ path('app_login') }}"><img src="{{ asset('assets/static/image/Blason.png') }}" alt="Logo2"
+                        class="logo2"></a>
+            </div>
+            {% if app.user %}
+                {% if app.user.isVerified == 1 %}
+                    {% if is_granted('ROLE_SECRETAIRE') %}
+                    <a class="btn btn-outline-primary mr-4" href="">
+                        Administration
+                    </a>
+                    {% else %}
+                    <a class="btn btn-outline-primary mr-4" href="">
+                        Réunion
+                    </a
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+            <a href="{{ path('homepage') }}">
+                <li>Accueil</li>
+            </a>
+            <a href="">
+                <li>Municipalité</li>
+            </a>
+            <a href="">
+                <li>Démarches</li>
+            </a>
+            <a href="">
+                <li>Nos associations</li>
+            </a>
+            {% if app.user %}
+                <a class="btn btn-outline-danger" href="{{ path('app_logout') }}">
+                    Déconnexion
+                </a>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <nav id="resp" onclick="resp()">
+        <hr>
+        <hr>
+        <hr>
+        <ul id="men">
+            <div class="logos">
+                <a href="{{ path('homepage') }}"><img class="logo1" src="{{ asset('assets/static/image/Logo.png') }}"
+                        alt="Logo1"></a>
+                <a href="{{ path('app_login') }}"><img src="{{ asset('assets/static/image/Blason.png') }}" alt="Logo2"
+                        class="logo2"></a>
+            </div>
+            {% if app.user %}
+                {% if is_granted('ROLE_SECRETAIRE') %}
+                <a id="btnResp1" class="btn btn-outline-primary mr-4" href="">
+                    Administration
+                </a>
+                {% endif %}
+            {% endif %}
+            <a href="{{ path('homepage') }}">
+                <li>Accueil</li>
+            </a>
+            <a href="">
+                <li>Municipalité</li>
+            </a>
+            <a href="">
+                <li>Démarches</li>
+            </a>
+            <a href="">
+                <li>Nos associations</li>
+            </a>
+            {% if app.user %}
+                <a id="btnResp2" class="btn btn-outline-danger" href="{{ path('app_logout') }}">
+                    Déconnexion
+                </a>
+            {% endif %}
+        </ul>
+    </nav>
+</header>

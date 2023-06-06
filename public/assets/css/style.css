@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "Dosis";
+    src: url("../static/font/Dosis-ExtraBold.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("../static/font/Roboto-Regular.ttf") format("truetype");
+  }
+  
+  /* Css Nav  */
+  
+  body {
+    margin: 0;
+  }
+  
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #btnResp1 {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin: auto;
+  }
+  
+  #btnResp2 {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin: auto;
+  }
+  
+  header #pc ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-color: #D2C8F8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+  }
+  
+  #pc ul li {
+    font-family: "Dosis";
+    list-style: none;
+    font-size: 19px;
+    padding: 13px 8px;
+    color: black;
+    font-weight: bold;
+    transition: color 0.5s, background-color 0.5s;
+  }
+  
+  #pc ul li:hover {
+    border-bottom: solid black 2px;
+  }
+  
+  #resp {
+    width: 100%;
+    background-color: #D2C8F8;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    display: none;
+    animation: fade 0.5s;
+  }
+  
+  #resp hr {
+    border-radius: 2px;
+    height: 4px;
+    width: 26px;
+    border: 0px;
+    background-color: black;
+    margin: 5px 5px;
+    text-align: right;
+  }
+  
+  #resp ul {
+    display: none;
+    padding-inline-start: 0px;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  #resp ul li {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    font-family: "Dosis";
+    list-style: none;
+    padding: 10px 3px;
+    color: black;
+    font-weight: bold;
+    transition: color 0.5s, background-color 0.5s;
+  }
+  
+  #resp ul li:hover {
+    border-bottom: solid black 2px;
+  }
+  
+  .logo1 {
+    width: 135px;
+  }
+  
+  .logo2 {
+    width: 70px;
+  }
+  
+  h5{
+    font-size: 24px;
+  }
+  p{
+    font-size: 18px;
+  }
+  li{
+    font-size: 18px;
+  }
+  
+  @keyframes fadein {
+    0% {
+      height: 0px;
+      opacity: 0;
+    }
+  
+    100% {
+      height: 190px;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeout {
+    0% {
+      opacity: 1;
+      height: 190px;
+    }
+  
+    100% {
+      opacity: 0;
+      height: 0px;
+    }
+}
