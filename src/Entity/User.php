@@ -48,9 +48,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'createur', targetEntity: self::class)]
     private Collection $createdBy;
 
+    #[ORM\OneToMany(mappedBy: 'createdBy', targetEntity: News::class)]
+    private Collection $news;
+
     public function __construct()
     {
         $this->createdBy = new ArrayCollection();
+        $this->news = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -207,6 +211,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($createdBy->getCreateur() === $this) {
                 $createdBy->setCreateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, News>
+     */
+    public function getNews(): Collection
+    {
+        return $this->news;
+    }
+
+    public function addNews(News $news): self
+    {
+        if (!$this->news->contains($news)) {
+            $this->news->add($news);
+            $news->setCreatedBy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNews(News $news): self
+    {
+        if ($this->news->removeElement($news)) {
+            // set the owning side to null (unless already changed)
+            if ($news->getCreatedBy() === $this) {
+                $news->setCreatedBy(null);
             }
         }
 
