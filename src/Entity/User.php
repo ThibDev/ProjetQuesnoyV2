@@ -51,10 +51,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'createdBy', targetEntity: News::class)]
     private Collection $news;
 
+    #[ORM\OneToMany(mappedBy: 'createdBy', targetEntity: Informations::class)]
+    private Collection $informations;
+
+    #[ORM\OneToMany(mappedBy: 'createdBy', targetEntity: Events::class)]
+    private Collection $events;
+
     public function __construct()
     {
         $this->createdBy = new ArrayCollection();
         $this->news = new ArrayCollection();
+        $this->informations = new ArrayCollection();
+        $this->events = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -241,6 +249,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($news->getCreatedBy() === $this) {
                 $news->setCreatedBy(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Informations>
+     */
+    public function getInformations(): Collection
+    {
+        return $this->informations;
+    }
+
+    public function addInformation(Informations $information): self
+    {
+        if (!$this->informations->contains($information)) {
+            $this->informations->add($information);
+            $information->setCreatedBy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInformation(Informations $information): self
+    {
+        if ($this->informations->removeElement($information)) {
+            // set the owning side to null (unless already changed)
+            if ($information->getCreatedBy() === $this) {
+                $information->setCreatedBy(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Events>
+     */
+    public function getEvents(): Collection
+    {
+        return $this->events;
+    }
+
+    public function addEvent(Events $event): self
+    {
+        if (!$this->events->contains($event)) {
+            $this->events->add($event);
+            $event->setCreatedBy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEvent(Events $event): self
+    {
+        if ($this->events->removeElement($event)) {
+            // set the owning side to null (unless already changed)
+            if ($event->getCreatedBy() === $this) {
+                $event->setCreatedBy(null);
             }
         }
 
