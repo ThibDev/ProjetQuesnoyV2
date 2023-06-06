@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -35,6 +37,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private ?bool $isVerified = false;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'createdBy')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?self $createur = null;
+
+    #[ORM\OneToMany(mappedBy: 'createur', targetEntity: self::class)]
+    private Collection $createdBy;
+
+    public function __construct()
+    {
+        $this->createdBy = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -138,6 +155,60 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getCreateur(): ?self
+    {
+        return $this->createur;
+    }
+
+    public function setCreateur(?self $createur): self
+    {
+        $this->createur = $createur;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, self>
+     */
+    public function getCreatedBy(): Collection
+    {
+        return $this->createdBy;
+    }
+
+    public function addCreatedBy(self $createdBy): self
+    {
+        if (!$this->createdBy->contains($createdBy)) {
+            $this->createdBy->add($createdBy);
+            $createdBy->setCreateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCreatedBy(self $createdBy): self
+    {
+        if ($this->createdBy->removeElement($createdBy)) {
+            // set the owning side to null (unless already changed)
+            if ($createdBy->getCreateur() === $this) {
+                $createdBy->setCreateur(null);
+            }
+        }
 
         return $this;
     }
