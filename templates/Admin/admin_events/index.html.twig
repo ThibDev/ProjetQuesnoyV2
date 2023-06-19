@@ -1,20 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminEventsController!{% endblock %}
+{% block title %}Liste des évènements{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/thibault/ProjetMairieV2/src/Controller/AdminEventsController.php'|file_link(0) }}">src/Controller/AdminEventsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/thibault/ProjetMairieV2/templates/admin_events/index.html.twig'|file_link(0) }}">templates/admin_events/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="container" style="margin-left: 50px">
+        <div class="row">
+            {% include "partials/adminnav.html.twig" %}
+            <main class="col-9 border border-light bg-white p-2">
+                <h1 id="h1ListeEvent">Liste des évènements</h1>
+                <table class="table">
+                    <thead style="background-color: #D2C8F8;">
+                        <tr>
+                            <th>Id</th>
+                            <th>Titre</th>
+                            <th>Photo</th>
+                            <th>Du</th>
+                            <th>Au</th>
+                            <th>De</th>
+                            <th>A</th>
+                            <th>Adresse</th>
+                            <th>Organisateur</th>
+                            <th>Modifier</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for event in events %}
+                            <tr>
+                                <td>{{ event.id }}</td>
+                                <td>{{ event.title }}</td>
+                                <td>{{ event.picture }}</td>
+                                <td>{{ event.startDate|date('d/m/y') }}</td>
+                                <td>{{ event.endDate|date('d/m/y') }}</td>
+                                <td>{{ event.startTime|date('H:i') }}</td>
+                                <td>{{ event.endTime|date('H:i') }}</td>
+                                <td>{{ event.address }}</td>
+                                <td>{{ event.organizedBy }}</td>
+                                <td><a href="{{ path('admin_events_edit', {id: event.id})}}"><i style="padding-left: 20px;color:black" class="bi bi-pencil-square"></i></a></td>
+                                <td><a href="{{ path('admin_events_delete', {id: event.id})}}"><i style="padding-left: 25px;color:black" class="bi bi-trash"></i></a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
 {% endblock %}

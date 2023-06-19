@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'une information{% endblock %}
+
+{% block body %}
+
+
+    
+    {{ form_start(infosForm) }}
+    <h1 class="h1FormEvent">Ajout d'une information</h1>
+    <div class="Inp1Event">
+        {{ form_row(infosForm.title, {
+        label: 'Titre',
+        }) }}
+        {{ form_row(infosForm.picture, {
+        label: 'Image',
+        }) }}
+    </div>
+    <div class="Inp2Event">{{ form_row(infosForm.start_date, {
+        label: 'Date de début',
+        }) }}
+        {{ form_row(infosForm.end_date, {
+        label: 'Date de fin',
+        }) }}
+    </div>
+    <div class="Inp3Event">{{ form_row(infosForm.start_time, {
+        label: 'Heure de début',
+        }) }}
+        {{ form_row(infosForm.end_time, {
+        label: 'Heure de fin',
+        }) }}
+    </div>
+    <div class="Inp4Event">
+        {{ form_row(infosForm.concerned_place, {
+            label: 'Endroit concerné:',
+            }) }}
+    </div>
+    <div class="btnEvent">
+        <button type="submit" class="btn">Envoyer</button>
+    </div>
+    {{ form_end(infosForm) }}
+</form>
+{% endblock %}

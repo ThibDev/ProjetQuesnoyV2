@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'Actualité{% endblock %}
+
+{% block body %}
+
+{{ form_start(newsForm) }}
+<h1 class="h1FormNews">Modification d'Actualité</h1>
+<div class="Inp1News">
+    {{ form_row(newsForm.title, {
+    label: 'Titre',
+    }) }}
+    {{ form_row(newsForm.picture, {
+    label: 'Image',
+    }) }}
+</div>
+<div class="Inp2News">{{ form_row(newsForm.description, {
+    label: 'Description',
+    }) }}
+</div>
+    <div class="btnNews">
+        <button type="submit" class="btn">Mofifier</button>
+    </div>
+    {{ form_end(newsForm) }}
+{% endblock %}

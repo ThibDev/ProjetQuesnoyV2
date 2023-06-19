@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Midification d'un évènement{% endblock %}
+
+{% block body %}
+
+
+    
+    {{ form_start(eventsForm, {class: 'formEvent'}) }}
+    <h1 class="h1FormEvent">Modification d'un évènement</h1>
+    <div class="Inp1Event">
+        {{ form_row(eventsForm.title, {
+        label: 'Titre',
+        }) }}
+        {{ form_row(eventsForm.picture, {
+        label: 'Image',
+        }) }}
+    </div>
+    <div class="Inp2Event">{{ form_row(eventsForm.start_date, {
+        label: 'Date de début',
+        }) }}
+        {{ form_row(eventsForm.end_date, {
+        label: 'Date de fin',
+        }) }}
+    </div>
+    <div class="Inp3Event">{{ form_row(eventsForm.start_time, {
+        label: 'Heure de début',
+        }) }}
+        {{ form_row(eventsForm.end_time, {
+        label: 'Heure de fin',
+        }) }}
+    </div>
+    <div class="Inp4Event">
+        {{ form_row(eventsForm.address, {
+        label: 'Adresse',
+        }) }}
+        {{ form_row(eventsForm.organized_by, {
+        label: 'Organiser par:',
+        }) }}
+    </div>
+    <div class="btnEvent">
+        <button type="submit" class="btn">Mofifier</button>
+    </div>
+    {{ form_end(eventsForm) }}
+</form>
+{% endblock %}

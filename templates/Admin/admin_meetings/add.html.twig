@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'une réunion{% endblock %}
+
+{% block body %}
+
+
+{{ form_start(meetingsForm) }}
+<h1 class="h1FormNews">Ajout d'une réunion</h1>
+
+{{ form_row(meetingsForm.meeting_type, {
+label: 'Type de réunion', 
+}) }}
+<div class="inpmeetings">
+    {{ form_row(meetingsForm.date, {
+    label: 'Date',
+    }) }}
+
+    {{ form_row(meetingsForm.time, {
+    label: 'Heure',
+    }) }}
+</div>
+
+{{ form_row(meetingsForm.message, {
+label: 'Message',
+}) }}
+<div class="btnNews">
+    <button type="submit" class="btn">Envoyer</button>
+</div>
+{{ form_end(meetingsForm) }}
+{% endblock %}
