@@ -2,8 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
 use App\Entity\Users;
 use App\Form\RegistrationFormType;
+use App\Repository\UserRepository;
 use App\Repository\UsersRepository;
 use App\Security\UsersAuthenticator;
 use App\Service\JWTService;
@@ -17,17 +19,17 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 #[Route('/admin/utilisateurs', name: 'admin_utilisateurs_')]
-class UsersController extends AbstractController
+class AdminUsersController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(UsersRepository $usersRepository): Response
+    public function index(UserRepository $usersRepository): Response
     {
         $users = $usersRepository->findBy([], ['id' => 'asc']);
         return $this->render('admin/users/index.html.twig', compact('users'));
     }
    
     #[Route('/edition/{id}', name: 'edit')]
-    public function edit(Users $user, Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UsersAuthenticator $authenticator,
+    public function edit(User $user, Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UsersAuthenticator $authenticator,
     EntityManagerInterface $em, SendMailService $mail, JWTService $jwt): Response
     {
         $this->denyAccessUnlessGranted('USER_EDIT', $user);
@@ -91,7 +93,7 @@ class UsersController extends AbstractController
     }
 
     #[Route('/supression/{id}', name: 'delete')]
-    public function delete(Users $users, EntityManagerInterface $em): Response
+    public function delete(User $users, EntityManagerInterface $em): Response
     {
         $this->denyAccessUnlessGranted('USER_DELETE', $users);
         $em->remove($users);

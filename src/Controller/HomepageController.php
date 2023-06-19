@@ -9,14 +9,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MainController extends AbstractController
+class HomepageController extends AbstractController
 {
-    #[Route('/', name: 'app_main')]
+    #[Route('/', name: 'homepage')]
     public function index(EventsRepository $eventsRepository, NewsRepository $newsRepository): Response
     {
         $news = $newsRepository->findBy(array(), array('id' => 'desc'), 3);
         $events = $eventsRepository->findAll();
-        return $this->render('main/index.html.twig', [
+        return $this->render('homepage/index.html.twig', [
             'events' => $events,
             'news' => $news
         ]);

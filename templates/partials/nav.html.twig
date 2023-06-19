@@ -2,34 +2,32 @@
     <nav id="pc">
         <ul>
             <div class="logos">
-                <a href="{{ path('homepage') }}"><img class="logo1" src="{{ asset('assets/static/image/Logo.png') }}"
+                <a href="{{ path('homepage') }}"><img class="logo1" src="{{ asset('assets/static/image/Logo.jpg') }}"
                         alt="Logo1"></a>
-                <a href="{{ path('app_login') }}"><img src="{{ asset('assets/static/image/Blason.png') }}" alt="Logo2"
+                <a href="{{ path('app_login') }}"><img src="{{ asset('assets/static/image/Blason.jpg') }}" alt="Logo2"
                         class="logo2"></a>
             </div>
             {% if app.user %}
-                {% if app.user.isVerified == 1 %}
-                    {% if is_granted('ROLE_SECRETAIRE') %}
-                    <a class="btn btn-outline-primary mr-4" href="">
-                        Administration
-                    </a>
-                    {% else %}
-                    <a class="btn btn-outline-primary mr-4" href="">
-                        Réunion
-                    </a
-                    {% endif %}
+                {% if is_granted('ROLE_SECRETAIRE') %}
+                <a class="btn btn-outline-primary mr-4" href="{{ path('admin_index') }}">
+                    Administration
+                </a>
+                {% else %}
+                <a class="btn btn-outline-primary mr-4" href="{{ path('admin_index') }}">
+                    Réunion
+                </a
                 {% endif %}
             {% endif %}
             <a href="{{ path('homepage') }}">
                 <li>Accueil</li>
             </a>
-            <a href="">
+            <a href="{{ path('municipalite_index')}}">
                 <li>Municipalité</li>
             </a>
-            <a href="">
+            <a href="{{ path('demarches_index') }}">
                 <li>Démarches</li>
             </a>
-            <a href="">
+            <a href="{{ path('associations_index')}}">
                 <li>Nos associations</li>
             </a>
             {% if app.user %}
@@ -53,7 +51,7 @@
             </div>
             {% if app.user %}
                 {% if is_granted('ROLE_SECRETAIRE') %}
-                <a id="btnResp1" class="btn btn-outline-primary mr-4" href="">
+                <a id="btnResp1" class="btn btn-outline-primary mr-4" href="{{ path('admin_index') }}">
                     Administration
                 </a>
                 {% endif %}
@@ -61,13 +59,13 @@
             <a href="{{ path('homepage') }}">
                 <li>Accueil</li>
             </a>
-            <a href="">
+            <a href="{{ path('municipalite_index')}}">
                 <li>Municipalité</li>
             </a>
-            <a href="">
+            <a href="{{ path('demarches_index') }}">
                 <li>Démarches</li>
             </a>
-            <a href="">
+            <a href="{{ path('associations_index')}}">
                 <li>Nos associations</li>
             </a>
             {% if app.user %}

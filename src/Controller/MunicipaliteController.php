@@ -7,13 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/Municipalité', name: 'municipalité_')]
+#[Route('/Municipalité', name: 'municipalite_')]
 class MunicipaliteController extends AbstractController
 {
     #[Route('/', name: 'index')]
     public function index(): Response
     {
-        return $this->render('municipalité/index.html.twig');
+        return $this->render('municipalite/index.html.twig');
     }
     #[Route('/maire', name: 'maire')]
     public function Maire(): Response

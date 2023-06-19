@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/admin/reunions', name: 'admin_meetings_')]
-class MeetingsController extends AbstractController
+class AdminMeetingsController extends AbstractController
 {
     #[Route('/', name: 'index')]
     public function index(MeetingsRepository $meetingsRepository): Response

@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/admin/informations', name: 'admin_informations_')]
-class InformationsController extends AbstractController
+class AdminInformationsController extends AbstractController
 {
     #[Route('/', name: 'index')]
     public function index(InformationsRepository $informationsRepository): Response

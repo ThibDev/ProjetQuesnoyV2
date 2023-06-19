@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ResetPasswordRequestFormType;
 use App\Form\ResetPasswordFormType;
+use App\Repository\UserRepository;
 use App\Repository\UsersRepository;
 use App\Service\SendMailService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -40,7 +41,7 @@ class SecurityController extends AbstractController
     }
 
     #[Route(path: '/oubli-pass', name: 'app_forgot_password' )]
-    public function forgotPassword(Request $request, UsersRepository $usersRepository,
+    public function forgotPassword(Request $request, UserRepository $usersRepository,
      TokenGeneratorInterface $tokenGeneratorInterface, EntityManagerInterface $entityManagerInterface,
      SendMailService $mail): Response
     {
@@ -89,7 +90,7 @@ class SecurityController extends AbstractController
     }
 
     #[Route('/oubli-pass/{token}', name:'app_reset_pass')]
-    public function resetPass(string $token, Request $request, UsersRepository $usersRepository,
+    public function resetPass(string $token, Request $request, UserRepository $usersRepository,
     EntityManagerInterface $entityManagerInterface, UserPasswordHasherInterface $passwordHasher): Response
     {
         // On vérifie si on a ce token dans la base de données

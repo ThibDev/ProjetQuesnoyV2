@@ -1,147 +1,2656 @@
 @font-face {
-    font-family: "Dosis";
-    src: url("../static/font/Dosis-ExtraBold.ttf") format("truetype");
+  font-family: "Dosis";
+  src: url("../static/font/Dosis-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../static/font/Roboto-Regular.ttf") format("truetype");
+}
+
+/* Css Nav  */
+
+body {
+  margin: 0;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnResp1 {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  margin: auto;
+}
+
+#btnResp2 {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  margin: auto;
+}
+
+header #pc ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: #D2C8F8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+}
+
+#pc ul li {
+  font-family: "Dosis";
+  list-style: none;
+  padding: 13px 8px;
+  color: black;
+  font-weight: bold;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+#pc ul li:hover {
+  border-bottom: solid black 2px;
+}
+
+#resp {
+  width: 100%;
+  background-color: #D2C8F8;
+  padding-top: 15px;
+  padding-bottom: 16px;
+  display: none;
+  animation: fade 0.5s;
+}
+
+#resp hr {
+  border-radius: 2px;
+  height: 4px;
+  width: 26px;
+  border: 0px;
+  background-color: black;
+  margin: 5px 5px;
+  text-align: right;
+}
+
+#resp ul {
+  display: none;
+  padding-inline-start: 0px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#resp ul li {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  font-family: "Dosis";
+  list-style: none;
+  padding: 10px 3px;
+  color: black;
+  font-weight: bold;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+#resp ul li:hover {
+  border-bottom: solid black 2px;
+}
+
+.logo1 {
+  width: 135px;
+}
+
+.logo2 {
+  width: 100px;
+}
+
+@keyframes fadein {
+  0% {
+    height: 0px;
+    opacity: 0;
   }
-  
-  @font-face {
-    font-family: "Roboto";
-    src: url("../static/font/Roboto-Regular.ttf") format("truetype");
+
+  100% {
+    height: 190px;
+    opacity: 1;
   }
-  
-  /* Css Nav  */
-  
-  body {
-    margin: 0;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    height: 190px;
   }
-  
-  .logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  100% {
+    opacity: 0;
+    height: 0px;
   }
-  
-  #btnResp1 {
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    margin: auto;
-  }
-  
-  #btnResp2 {
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    margin: auto;
-  }
-  
-  header #pc ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    background-color: #D2C8F8;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 0px;
-  }
-  
-  #pc ul li {
-    font-family: "Dosis";
-    list-style: none;
-    font-size: 19px;
-    padding: 13px 8px;
-    color: black;
-    font-weight: bold;
-    transition: color 0.5s, background-color 0.5s;
-  }
-  
-  #pc ul li:hover {
-    border-bottom: solid black 2px;
-  }
-  
+}
+
+/* Responsive Téléphone */
+
+@media screen and (min-width:480px) and (max-width: 770px) {
   #resp {
+    display: block;
+  }
+
+  #pc {
+    display: none;
+  }
+
+  #RecrAdo #infosRecr{
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  #infosRecr #carouselRecr{
     width: 100%;
-    background-color: #D2C8F8;
-    padding-top: 15px;
-    padding-bottom: 16px;
-    display: none;
-    animation: fade 0.5s;
   }
-  
-  #resp hr {
-    border-radius: 2px;
-    height: 4px;
-    width: 26px;
-    border: 0px;
-    background-color: black;
-    margin: 5px 5px;
-    text-align: right;
+
+  .pRecr{
+    text-align: initial;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 10px;
   }
-  
-  #resp ul {
+
+  #txtRecr #contactRecr{
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+
+  #Actualités {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #Actualités .card {
+    margin-bottom: 50px;
+  }
+
+  #Evènement #carouselEvenements {
+    width: 80%;
+  }
+
+  #CarouEvent {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #dateEvent {
+    padding: 0px 100px;
+  }
+
+  #heureEvent {
+    padding: 0px 100px;
+  }
+
+  #carouselEvenements #CarouEventsPrev {
+    left: 0%;
+    top: 55%;
+    width: 10%;
+    height: 10%;
+  }
+
+  #carouselEvenements #CarouEventsNext {
+    left: 90%;
+    top: 55%;
+    width: 10%;
+    height: 10%;
+  }
+
+  #carte {
     display: none;
-    padding-inline-start: 0px;
+  }
+
+  #pcarte {
+    display: none;
+  }
+
+  #foot #contact {
+    width: 100%;
+    text-align: center;
+  }
+
+  #contact #pcontact2 {
+    margin: 0;
+    width: 100%;
+  }
+
+  #foot {
+    flex-direction: column;
+  }
+
+  #sec1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sec1 #separation {
+    display: none;
+  }
+
+  .demarchessep {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body #secMaire {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secMaire #Maireimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secMaire #h1Maire {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
     margin: 0;
   }
-  
-  a {
-    text-decoration: none;
+
+  #secMaire .décoration{
+    display: none;
   }
-  
-  #resp ul li {
+
+  body #secElus {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secElus #Elusimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secElus #h1Elus {
+    width: 49%;
     text-align: center;
-    width: 60%;
-    margin: 0 auto;
-    font-family: "Dosis";
-    list-style: none;
-    padding: 10px 3px;
-    color: black;
-    font-weight: bold;
-    transition: color 0.5s, background-color 0.5s;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
   }
-  
-  #resp ul li:hover {
-    border-bottom: solid black 2px;
+
+  #secElus .décorationElus{
+    display: none;
   }
-  
-  .logo1 {
-    width: 135px;
+
+  #infosElus .Elu{
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .logo2 {
-    width: 70px;
+
+  .txtElu .fonctionsElu{
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  h5{
-    font-size: 24px;
+
+  body #secMairie {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
   }
-  p{
-    font-size: 18px;
+
+  body #infosMairie{
+    width: 100%;
   }
-  li{
-    font-size: 18px;
+
+  #infosMairie .pTitreMairie{
+    width: 75%;
   }
-  
-  @keyframes fadein {
-    0% {
-      height: 0px;
-      opacity: 0;
-    }
-  
-    100% {
-      height: 190px;
-      opacity: 1;
-    }
+
+  #infosMairie .pMairie{
+    width: 75%;
   }
-  
-  @keyframes fadeout {
-    0% {
-      opacity: 1;
-      height: 190px;
-    }
-  
-    100% {
-      opacity: 0;
-      height: 0px;
-    }
+
+  #secMairie #Mairieimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secMairie #h1Mairie {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secMairie .décoration{
+    display: none;
+  }
+
+  #secMairie #carouselMairie{
+    width: 100%;
+  }
+
+  body #secSalle {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  body #infosSalle{
+    width: 100%;
+  }
+
+  #infosSalle .pTitreSalle{
+    width: 75%;
+  }
+
+  #infosSalle .pSalle{
+    width: 75%;
+  }
+
+  #secSalle #Salleimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secSalle #h1Salle {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secSalle .décoration{
+    display: none;
+  }
+
+  #secSalle #carouselSalle{
+    width: 100%;
+  }
+
+  body #secinfos{
+    width: 100%;
+    height: 250px;
+  }
+
+  #secinfos #infosimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #allInfos div.card{
+    margin-bottom: 50px;
+  }
+
+  #secinfos #h1infos {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secinfos .décoration{
+    display: none;
+  }
+
+  /* Responsive pages démarches */
+
+  body #secidentite {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secidentite #identiteimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secidentite #h1identite {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secidentite .décoration{
+    display: none;
+  }
+
+  body #seccartegrise {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #seccartegrise #cartegriseimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #seccartegrise #h1cartegrise {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #seccartegrise .décoration{
+    display: none;
+  }
+
+  body #seccarteelectorale {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #seccarteelectorale #carteelectoraleimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #seccarteelectorale #h1carteelectorale {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #seccarteelectorale .décoration{
+    display: none;
+  }
+
+  body #secnaissance {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secnaissance #naissanceimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secnaissance #h1naissance {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secnaissance .décoration{
+    display: none;
+  }
+
+  body #secmariage {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secmariage #mariageimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secmariage #h1mariage {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secmariage .décoration{
+    display: none;
+  }
+
+  body #secpasseport {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secpasseport #passeportimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secpasseport #h1passeport {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secpasseport .décoration{
+    display: none;
+  }
+
+  body #secrecenssement {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secrecenssement #recenssementimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secrecenssement #h1recenssement {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secrecenssement .décoration{
+    display: none;
+  }
+
+  body #secdeces {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secdeces #decesimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secdeces #h1deces {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secdeces .décoration{
+    display: none;
+  }
+
+  body #secconservation {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secconservation #conservationimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secconservation #h1conservation {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secconservation .décoration{
+    display: none;
+  }
+}
+
+/* Responsive tablette */
+
+@media screen and (min-width:770px) and (max-width: 1280px) {
+  #resp {
+    display: block;
+  }
+
+  #pc {
+    display: none;
+  }
+
+  #RecrAdo #infosRecr{
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  #infosRecr #carouselRecr{
+    width: 100%;
+  }
+
+  .pRecr{
+    text-align: initial;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+
+  #txtRecr #contactRecr{
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+
+  #Actualités {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #Actualités .card {
+    margin-bottom: 50px;
+  }
+
+  #Evènement #carouselEvenements {
+    width: 80%;
+  }
+
+  #CarouEvent {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #dateEvent {
+    padding: 0px 100px;
+  }
+
+  #heureEvent {
+    padding: 0px 100px;
+  }
+
+  #carouselEvenements #CarouEventsPrev {
+    left: 0%;
+    top: 55%;
+    width: 10%;
+    height: 10%;
+  }
+
+  #carouselEvenements #CarouEventsNext {
+    left: 90%;
+    top: 55%;
+    width: 10%;
+    height: 10%;
+  }
+
+  #carte {
+    display: none;
+  }
+
+  #pcarte {
+    display: none;
+  }
+
+  #foot #contact {
+    width: 100%;
+    text-align: center;
+  }
+
+  #contact #pcontact2 {
+    margin: 0;
+    width: 100%;
+  }
+
+  #foot {
+    flex-direction: column;
+  }
+
+  #sec1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sec1 #separation {
+    display: none;
+  }
+
+  .demarchessep {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body #secMaire {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secMaire #Maireimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secMaire #h1Maire {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secMaire .décoration{
+    display: none;
+  }
+
+  body #secElus {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secElus #Elusimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secElus #h1Elus {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secElus .décorationElus{
+    display: none;
+  }
+
+  #infosElus .Elu{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .txtElu .fonctionsElu{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  body #secMairie {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  body #infosMairie{
+    width: 100%;
+  }
+
+  #infosMairie .pTitreMairie{
+    width: 75%;
+  }
+
+  #infosMairie .pMairie{
+    width: 75%;
+  }
+
+  #secMairie #Mairieimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secMairie #h1Mairie {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secMairie .décoration{
+    display: none;
+  }
+
+  #secMairie #carouselMairie{
+    width: 100%;
+  }
+
+  body #secSalle {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  body #infosSalle{
+    width: 100%;
+  }
+
+  #infosSalle .pTitreSalle{
+    width: 75%;
+  }
+
+  #infosSalle .pSalle{
+    width: 75%;
+  }
+
+  #secSalle #Salleimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secSalle #h1Salle {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secSalle .décoration{
+    display: none;
+  }
+
+  #secSalle #carouselSalle{
+    width: 100%;
+  }
+
+  body #secinfos{
+    width: 100%;
+    height: 250px;
+  }
+
+  #secinfos #infosimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #allInfos div.card{
+    margin-bottom: 50px;
+  }
+
+  #secinfos #h1infos {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secinfos .décoration{
+    display: none;
+  }
+
+  /* Responsive pages démarches */
+
+  body #secidentite {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secidentite #identiteimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secidentite #h1identite {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secidentite .décoration{
+    display: none;
+  }
+
+  body #seccartegrise {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #seccartegrise #cartegriseimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #seccartegrise #h1cartegrise {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #seccartegrise .décoration{
+    display: none;
+  }
+
+  body #seccarteelectorale {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #seccarteelectorale #carteelectoraleimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #seccarteelectorale #h1carteelectorale {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #seccarteelectorale .décoration{
+    display: none;
+  }
+
+  body #secnaissance {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secnaissance #naissanceimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secnaissance #h1naissance {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secnaissance .décoration{
+    display: none;
+  }
+
+  body #secmariage {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secmariage #mariageimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secmariage #h1mariage {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secmariage .décoration{
+    display: none;
+  }
+
+  body #secpasseport {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secpasseport #passeportimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secpasseport #h1passeport {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secpasseport .décoration{
+    display: none;
+  }
+
+  body #secrecenssement {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secrecenssement #recenssementimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secrecenssement #h1recenssement {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secrecenssement .décoration{
+    display: none;
+  }
+
+  body #secdeces {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secdeces #decesimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secdeces #h1deces {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secdeces .décoration{
+    display: none;
+  }
+
+  body #secconservation {
+    align-items: center;
+    height: 270px;
+    margin-bottom: 50px;
+  }
+
+  #secconservation #conservationimg {
+    width: 50%;
+    height: 240px;
+  }
+
+  #secconservation #h1conservation {
+    width: 49%;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Dosis';
+    margin: 0;
+  }
+
+  #secconservation .décoration{
+    display: none;
+  }
+
+  #allActus div.card{
+    margin-bottom: 50px;
+    width : 60%;
+  }
+
+  #infosMairie .pMairie{
+    width: 50%;
+  }
+
+  #infosMairie .pTitreMairie{
+    width: 50%;
+  }
+
+  #infosSalle .pSalle{
+    width: 50%;
+  }
+
+  #infosSalle .pTitreSalle{
+    width: 50%;
+  }
+
+  body #allInfos{
+    width: 100%;
+  }
+}
+
+
+/* Css Footer */
+
+footer {
+  background-color: #D2C8F8;
+}
+
+#foot {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#contact {
+  width: 16%;
+}
+
+.pcontact {
+  margin: 15px 0px;
+  font-family: "Dosis";
+}
+
+#pcontact2 {
+  margin: 15px 0px;
+  width: 80%;
+  font-family: "Dosis";
+}
+
+i {
+  padding-right: 10px;
+}
+
+#pcarte {
+  text-align: center;
+  font-family: "Dosis";
+  padding-top: 10px;
+}
+
+#rgpd {
+  font-family: "Dosis";
+  text-align: center;
+  margin: 30px 0px 0px 0px;
+  padding-bottom: 10px;
+}
+
+/* Css Form Login */
+
+#formlogin {
+  background-color: #5567D6;
+  margin: 50px 0px;
+  padding: 50px 0px;
+}
+
+#hlogin {
+  text-align: center;
+  font-family: "Dosis";
+  color: white;
+}
+
+#inputlogin {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+#labellogin {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 280px;
+  margin-top: 70px;
+  width: 80%;
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  color: white;
+}
+
+#inputEmailLogin {
+  width: 30%;
+}
+
+#inputPasswordLogin {
+  width: 30%;
+}
+
+#pForgotPass {
+  font-size: 0.7rem;
+  font-family: 'Dosis';
+  text-align: end;
+  margin-right: 14em;
+  margin-top: 1em;
+}
+
+#aForgotPass {
+  text-decoration: none;
+  color: white;
+}
+
+#aForgotPass:hover {
+  border-bottom: solid 2px white;
+}
+
+#btnlogin {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+
+
+/* Css Form Register */
+
+.formregister {
+  background-color: #5567D6;
+  margin: 50px 0px;
+  padding: 50px 0px;
+}
+
+.hregister {
+  text-align: center;
+  font-family: "Dosis";
+  color: white;
+}
+
+.npregister {
+  margin-right: 165px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  color: white;
+  padding-right: 190px;
+  font-family: "Dosis";
+}
+
+.hidden {
+  display: none;
+}
+
+#registration_form_lastname {
+  width: 200%;
+}
+
+#registration_form_firstname {
+  width: 200%;
+}
+
+#registration_form_email {
+  width: 66em;
+  margin-left: 234px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+}
+
+#registration_form_plainPassword {
+  width: 66em;
+  margin-left: 234px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+}
+
+.labelFormUser {
+  padding-left: 235px;
+  font-family: 'Dosis';
+  color: white;
+}
+
+.btnFormUser {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+#registration_form_RGPDConsent {
+  margin-left: 210px;
+  margin-right: 20px;
+}
+
+.RGPD {
+  margin-left: 0;
+  color: white;
+  font-family: "Dosis";
+}
+
+/* Css Form Forgot Password Request */
+
+#FormForgotPassRequest {
+  background-color: #5567D6;
+  margin: 50px 0px;
+  padding: 50px 0px;
+}
+
+#h1FormForgotPassRequest {
+  text-align: center;
+  font-family: "Dosis";
+  color: white;
+}
+
+#LabelMailForgotPassRequest {
+  width: 66em;
+  margin: 50px 0px 10px 234px;
+  font-family: 'Dosis';
+  color: white;
+}
+
+#reset_password_request_form_email {
+  width: 66em;
+  margin-left: 234px;
+  margin-bottom: 40px;
+}
+
+#btnResetPassRequest {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+/* Css Form Forgot Password */
+
+#FormForgotPass {
+  background-color: #5567D6;
+  margin: 50px 0px;
+  padding: 50px 0px;
+}
+
+#h1FormForgotPass {
+  text-align: center;
+  font-family: "Dosis";
+  color: white;
+}
+
+#LabelForgotPass {
+  width: 66em;
+  margin: 50px 0px 10px 234px;
+  font-family: 'Dosis';
+  color: white;
+}
+
+#reset_password_form_password {
+  width: 66em;
+  margin-left: 234px;
+  margin-bottom: 40px;
+}
+
+#btnResetPass {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+/* Css FormAddEvent */
+
+.formEvent {
+  background-color: #5567D6;
+  margin: 50px 0px;
+  padding: 50px 0px;
+}
+
+.h1FormEvent {
+  text-align: center;
+  font-family: "Dosis";
+  color: white;
+}
+
+.Inp1Event {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+  color: white;
+}
+
+.events_form_picture {
+  display: flex;
+  flex-direction: column;
+}
+
+.Inp2Event {
+  padding-right: 355px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+  color: white;
+  padding-left: 250px;
+}
+
+.Inp3Event {
+  padding-right: 415px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+  color: white;
+  padding-left: 250px;
+}
+
+.Inp4Event {
+  padding-right: 380px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+  color: white;
+  padding-left: 250px;
+}
+
+.form-control {
+  width: 120%;
+}
+
+.form-control-date {
+  width: 120%;
+}
+
+.form-control-time {
+  width: 120%;
+}
+
+.btnEvent {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.btnEvent:hover {
+  background-color: #D2C8F8;
+  color: green;
+}
+
+/* Css FormAddEvent */
+
+.formNews {
+  background-color: #5567D6;
+  margin: 50px 0px;
+  padding: 50px 0px;
+}
+
+.h1FormNews {
+  text-align: center;
+  font-family: "Dosis";
+  color: white;
+  margin-bottom: 50px;
+}
+
+.Inp1News {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+  color: white;
+}
+
+.news_form_picture {
+  display: flex;
+  flex-direction: column;
+}
+
+.Inp2News {
+  padding-right: 355px;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+  color: white;
+  padding-left: 250px;
+}
+
+#news_form_description {
+  height: 100px;
+}
+
+.form-control {
+  width: 120%;
+}
+
+.btnNews {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.btnNews:hover {
+  background-color: #D2C8F8;
+  color: green;
+}
+
+.inputRéunion {
+  width: 49%;
+  margin: auto;
+  font-family: "Dosis";
+}
+
+.inputRéu {
+  width: 49%;
+  margin: auto;
+  font-family: "Dosis";
+  height: 100px;
+}
+
+.labelRéunion {
+  margin-left: 26%;
+  font-family: "Dosis";
+  color: white;
+}
+
+/* Css Caroussel Evenement */
+
+#Evènement {
+  margin-bottom: 50px;
+}
+
+#CarouEvent {
+  display: flex;
+}
+
+#carouselEvenements {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#CarouEventsPrev {
+  left: -5%;
+  top: 35%;
+  width: 5%;
+  height: 15%;
+}
+
+#CarouEventsNext {
+  left: 100%;
+  top: 35%;
+  width: 5%;
+  height: 15%;
+}
+
+.card-title {
+  text-align: center;
+  font-family: "Dosis";
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+#dateEvent {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Roboto";
+  margin-bottom: 8px;
+}
+
+#heureEvent {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Roboto";
+  margin-bottom: 8px;
+}
+
+#addresseEvent {
+  text-align: center;
+  font-family: "Roboto";
+  margin-bottom: 20px;
+}
+
+#organiseEvent {
+  text-align: center;
+  font-family: "Roboto";
+}
+
+.textCarou {
+  font-family: "Dosis";
+}
+
+#h1Admin {
+  text-align: center;
+  font-family: "Dosis";
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+#h1ListeEvent {
+  text-align: center;
+  font-family: "Dosis";
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.card-header {
+  font-family: "Dosis";
+  background-color: #D2C8F8;
+}
+
+.a-admin {
+  color: black;
+  font-family: "Roboto";
+  text-decoration: none;
+}
+
+.a-admin:hover {
+  border-bottom: solid 2px black;
+}
+
+.inpmeetings {
+  padding-right: 390px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-family: "Dosis";
+  color: white;
+  padding-left: 388px;
+}
+
+#meetings_form_date {
+  width: 110%;
+}
+
+#TypeReu {
+  color: white;
+  margin-left: 385px;
+  font-family: "Dosis";
+}
+
+/* Css Page Municipalité */
+
+#h1municipalité {
+  text-align: center;
+  font-family: "Dosis";
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#sec1 {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.imgmunicipalite {
+  width: 420px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+#separation {
+  height: 200px;
+  width: 1px;
+  background-color: black;
+  margin-top: 23px;
+}
+
+.pmunicipalite {
+  text-align: center;
+  font-family: "Dosis";
+  margin-top: 15px;
+}
+
+#mairie {
+  justify-content: center;
+  display: grid;
+  margin-bottom: 50px;
+}
+
+#salledesfetes {
+  justify-content: center;
+  display: grid;
+  margin-bottom: 50px;
+}
+
+#informations {
+  justify-content: center;
+  display: grid;
+  margin-bottom: 50px;
+}
+
+/* Css Page Maire */
+
+#secMaire {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#Maireimg {
+  width: 720px;
+  height: 450px;
+  z-index: 10;
+}
+
+.décoration {
+  z-index: 100;
+  width: 90px;
+  height: 150px;
+  background-color: white;
+  position: relative;
+  top: 150px;
+  right: 39px;
+}
+
+#h1Maire {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 9% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosMaire {
+  margin: auto;
+  width: 45%;
+  padding-bottom: 50px;
+}
+
+.pTitreMaire {
+  margin-bottom: 20px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pMaire {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page Démarches */
+
+#h1demarches {
+  text-align: center;
+  font-family: "Dosis";
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.demarchessep {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 100px 0px;
+}
+
+.imgl {
+  width: 320px;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.imgh {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.pdemarches {
+  text-align: center;
+  font-family: "Dosis";
+}
+
+/* Css Page Carte d'identité */
+
+#secidentite {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#identiteimg {
+  width: 720px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1identite {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosidentite {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitreIdentite {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pIdentite {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page Carte grise */
+
+#seccartegrise {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#cartegriseimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1cartegrise {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infoscartegrise {
+  margin: auto;
+  width: 45%;
+  padding-bottom: 50px;
+}
+
+.pTitrecartegrise {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pcartegrise {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page Carte electorale */
+
+#seccarteelectorale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#carteelectoraleimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1carteelectorale {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infoscarteelectorale {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitrecarteelectorale {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pcarteelectorale {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page Naissance */
+
+#secnaissance {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#naissanceimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1naissance {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosnaissance {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitrenaissance {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pnaissance {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page Acte de mariage */
+
+#secmariage {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#mariageimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1mariage {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosmariage {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitremariage {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pmariage {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page Mariage */
+
+#secmariage {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#mariageimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1mariage {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosmariage {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitremariage {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pmariage {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page passeport */
+
+#secpasseport {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#passeportimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1passeport {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infospasseport {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitrepasseport {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.ppasseport {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page recenssement */
+
+#secrecenssement {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#recenssementimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1recenssement {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosrecenssement {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitrerecenssement {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.precenssement {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page deces */
+
+#secdeces {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#decesimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1deces {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosdeces {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitredeces {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pdeces {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page conservation */
+
+#secconservation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#conservationimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1conservation {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosconservation {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.pTitreconservation {
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pconservation {
+  margin-bottom: 30px;
+  font-family: "Roboto";
+}
+
+/* Css Page Elus */
+
+#secElus {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#Elusimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1Elus {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosElus {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+.décorationElus {
+  z-index: 100;
+  width: 90px;
+  height: 150px;
+  background-color: white;
+  position: relative;
+  top: 150px;
+  right: 35px;
+}
+
+.Elu {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+.photoElu {
+  width: 240px;
+  height: 150px;
+  margin-right: 10%;
+}
+
+.hElu {
+  font-family: "Dosis";
+}
+
+.pElu {
+  font-family: "Roboto";
+}
+
+.roleElu {
+  font-family: "Dosis";
+}
+
+.fonctionsElu {
+  display: flex;
+  width: 140%;
+}
+
+/* Css Page Mairie */
+
+#secMairie {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#Mairieimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1Mairie {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 201px;
+  font-family: 'Dosis';
+}
+
+#infosMairie {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+#CarouMairiePrev {
+  height: 10%;
+  background-color: black;
+  width: 5%;
+  top: 50%;
+}
+
+#CarouMairieNext {
+  height: 10%;
+  background-color: black;
+  width: 5%;
+  top: 50%;
+}
+
+.pTitreMairie {
+  margin: auto;
+  width: 55%;
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pMairie {
+  margin: auto;
+  width: 55%;
+  font-family: "Roboto";
+  margin-bottom: 30px;
+}
+
+#carouselMairie {
+  margin-bottom: 50px;
+}
+
+/* Css Page Salle des fêtes */
+
+#secSalle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#Salleimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1Salle {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 15% 15% 160px;
+  font-family: 'Dosis';
+}
+
+#infosSalle {
+  margin: auto;
+  width: 55%;
+  padding-bottom: 50px;
+}
+
+#CarouSallePrev {
+  height: 10%;
+  background-color: black;
+  width: 5%;
+  top: 50%;
+}
+
+#CarouSalleNext {
+  height: 10%;
+  background-color: black;
+  width: 5%;
+  top: 50%;
+}
+
+.pTitreSalle {
+  margin: auto;
+  width: 55%;
+  margin-bottom: 10px;
+  font-family: "Dosis";
+  font-size: 1.2rem;
+}
+
+.pSalle {
+  margin: auto;
+  width: 55%;
+  font-family: "Roboto";
+  margin-bottom: 30px;
+}
+
+#carouselSalle {
+  margin-bottom: 50px;
+}
+
+/* Css page acceuil */
+
+#h1Acceuil {
+  margin: 50px 0px 0px 50px;
+  font-family: "Dosis";
+  color: #00643C;
+}
+
+#Actualités {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 7% 0px;
+}
+
+#h2Acceuil {
+  margin: 50px 0px 75px 50px;
+  font-family: "Dosis";
+  color: #00643C;
+}
+
+#btnActus {
+  display: flex;
+  justify-content: center;
+}
+
+#btn1Accueil {
+  margin-bottom: 25%;
+  color: white;
+  background-color: #00643C;
+}
+
+#btnEven {
+  display: flex;
+  justify-content: center;
+}
+
+#btn2Accueil {
+  margin-bottom: 25%;
+  color: white;
+  background-color: #00643C;
+  margin: 50px 0px;
+}
+
+/* Css page toutes les actualités */
+
+#h1AllActus {
+  text-align: center;
+  font-family: "Dosis";
+  color: #00643C;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#allActus {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 75px;
+}
+
+#imgAllActus {
+  width: 280px;
+  height: 160px;
+  margin: auto;
+}
+
+/* Css page tous les évènements */
+
+#h1AllEvents {
+  text-align: center;
+  font-family: "Dosis";
+  color: #00643C;
+  margin-top: 30px;
+}
+
+#allEvents {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 75px;
+}
+
+#imgAllEvents {
+  width: 280px;
+  height: 160px;
+  margin: auto;
+}
+
+#dateAllEvent {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Roboto";
+  margin-bottom: 8px;
+}
+
+#heureAllEvent {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Roboto";
+  margin-bottom: 8px;
+}
+
+#addresseAllEvent {
+  text-align: center;
+  font-family: "Roboto";
+  margin-bottom: 20px;
+}
+
+#organiseAllEvent {
+  text-align: center;
+  font-family: "Roboto";
+}
+
+.textAllEvents {
+  font-family: "Dosis";
+}
+
+/* Css Page Informations */
+
+#secinfos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 500px;
+}
+
+#infosimg {
+  width: 1200px;
+  height: 450px;
+  z-index: 10;
+}
+
+#h1infos {
+  width: 43%;
+  text-align: center;
+  line-height: 90px;
+  margin: 11% 10% 15% 50px;
+  font-family: 'Dosis';
+}
+
+#imgAllInfos {
+  width: 280px;
+  height: 160px;
+  margin: auto;
+}
+
+#allInfos {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 75px;
+}
+
+#dateAllInfos {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Roboto";
+  margin-bottom: 8px;
+}
+
+#heureAllInfos {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Roboto";
+  margin-bottom: 8px;
+}
+
+#addresseAllInfos {
+  text-align: center;
+  font-family: "Roboto";
+  margin-bottom: 20px;
+}
+
+#organiseAllInfos {
+  text-align: center;
+  font-family: "Roboto";
+}
+
+.textAllInfos {
+  font-family: "Dosis";
+}
+
+/* Css Page Associations */
+
+#h1Associations {
+  text-align: center;
+  font-family: "Dosis";
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#carouselRecr {
+  width: 40%;
+}
+
+#CarouRecrPrev {
+  height: 10%;
+  background-color: black;
+  width: 5%;
+  top: 50%;
+}
+
+#CarouRecrNext {
+  height: 10%;
+  background-color: black;
+  width: 5%;
+  top: 50%;
+}
+
+#h2Recr {
+  text-align: center;
+  font-family: "Dosis";
+  color: #00643C;
+  margin-bottom: 50px;
+}
+
+#infosRecr {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+#dateRecr {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#horairesRecr {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#tarifsRecr {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#sitesRecr {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pRecr {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+#datepetanque {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#contactRecr {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#deco1 {
+  bottom: 75%;
+  left: 170px;
+  width: 280px;
+  position: absolute;
+}
+
+#deco2 {
+  width: 230px;
+  position: absolute;
+  bottom: 0px;
+  left: 160px;
 }
