@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acte de décès{% endblock %}
+
+{% block body %}
+    <section id="secdeces">
+        <img id="decesimg" src="{{ asset('assets/static/image/decès.jpg') }}" alt="Acte de décès">
+        <div class="décoration"></div>
+        <h1 id="h1deces">Acte de décès</h1>
+    </section>
+    <section id="infosdeces">
+        <p class="pTitredeces">LA DECLARATION DE DECES EST OBLIGATOIRE ET DOIT ETRE FAITE DANS LES 24 HEURES.</p>
+        <p class="pTitredeces">Qui déclare ?</p>
+        <li class="pdeces">Toute personne peut déclarer un décès.</li>
+        <li class="pdeces">En cas d'appel à une entreprise de pompes funèbres, celle-ci se chargera des démarches.</li>
+        <li class="pdeces">Si le décès survient à l'hôpital, la déclaration sera faite directement par l'hôpital à la mairie du lieu du décès.</li>
+        <p class="pTitredeces">Comment ?</p>
+        <li class="pdeces">Vous devez d'abord faire constater le décès, puis le déclarer.Le médecin délivre un certificat de décès, sauf en cas de mort violente (accident, suicide...).</li>
+        <li class="pdeces">En cas de mort violente, vous devez prévenir le commissariat de police ou la gendarmerie.</li>
+        <p class="pTitredeces">Où ?</p>
+        <li class="pdeces">A la mairie du lieu du décès.</li>
+        <p class="pTitredeces">Pièces à fournir ?</p>
+        <li class="pdeces">une pièce prouvant votre identité.</li>
+        <li class="pdeces">le livret de famille du défunt ou sa carte d'identité, ou un extrait ou une copie de son acte de naissance ou de son acte de mariage.</li>
+        <li class="pdeces">le certificat de décès délivré par le médecin, le commissariat de police ou la gendarmerie.</li>
+        <p class="pTitredeces">Comment organiser les obsèques :</p>
+        <p class="pTitredeces">L'inhumation ?</p>
+        <p class="pdeces">L'enterrement d'un corps doit avoir lieu au plus tard dans les 6 jours ouvrables qui suivent le décés. Le permis d'inhumer est délivré par le Maire au moment de la déclaration de décès</p>
+        <p class="pTitredeces">La crémation</p>
+        <p class="pdeces">Tout comme l'enterrement d'un corps, la crémation doit avoir lieu au plus tard dans les 6 jours ouvrables qui suivent le décès. </p>
+    </section>
+
+{% endblock %}

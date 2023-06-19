@@ -1,20 +1,79 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AssociationsController!{% endblock %}
+{% block title %}Associations{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<h2 id="h1Associations">Associations</h2>
+<section id="RecrAdo">
+    <h3 id="h2Recr">Recr'Ado</h3>
+    <div id="infosRecr">
+        <div id="carouselRecr" class="carousel slide" data-bs-ride="carousel">
+            <button style="background-color:black" id="CarouRecrPrev" class="carousel-control-prev" type="button"
+                data-bs-target="#carouselRecr" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img style="height:400px;width:300px;margin:auto" src="{{asset('assets/static/image/Recr1.jpg')}}" class="d-block" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px;margin:auto" src="{{asset('assets/static/image/Recr2.jpg')}}" class="d-block" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/Recr3.jpg')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/Recr4.jpg')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/Recr5.jpg')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/Recr6.jpg')}}" class="d-block w-100" alt="Salle">   
+                </div>
+            </div>
+            <button style="background-color:black" id="CarouRecrNext" class="carousel-control-next" type="button"
+                data-bs-target="#carouselRecr" data-bs-slide="next">
+                <span style="color:black" class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span style="color:black" class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div id="txtRecr">
+            <p class="pRecr">1) Récr'Ado est un centre de loisir qui se déroule :</p>
+            <div id="dateRecr">
+                <div>
+                    <li>La 1ère semaine des vacances de février</li>
+                    <li>La 1ère semaine des vacances d'avril'</li>
+                    <li>4 semaines en été (3 en juillet et 1 en août)</li>
+                    <li>La 1ère semaine des vacances d'octobre'</li>
+                </div>
+            </div>
+            <p class="pRecr">Ouvert du lundi au vendredi sauf jours fériés</p>
+            <p class="pRecr">Téléphone de l'association : <strong>07 67 68 18 55</strong></p>
+            <p class="pRecr">2) L'association organise également des concours de pétanque qui se déroule en :</p>
+            <div id="datepetanque">
+                <li>Avril</li>
+                <li>Juin</li>
+                <li>Septembre</li>
+            </div>
+            <p class="pRecr">3) La retraite au flambeaux est prévue le 13 juillet 2023 à 21h30, place d'erambeaucourt</p>
+            <p class="pRecr">4) Le marché de Noël est prévu le 26 novembre 2023 à la salle des fêtes de Le Quesnoy en Artois</p>
+            <div id="contactRecr">
+                <div>
+                    <p><strong>Contact :</strong></p>
+                    <li>Mail : recr.ado.lequesnoy@mail.com</li>
+                    <li style="width: 101%;">Téléphone de la présidente : 06 23 77 02 78</li>
+                </div>
+                <div>
+                    <li>Facebook : <a href="https://fr-fr.facebook.com/recrado/">Recr'Ado</a></li>
+                    <li style="width: 101%;padding-right:0">Adresse : 1 place de l'église 62140 Le Quesnoy en Artois</li>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/thibault/ProjetMairieV2/src/Controller/AssociationsController.php'|file_link(0) }}">src/Controller/AssociationsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/thibault/ProjetMairieV2/templates/associations/index.html.twig'|file_link(0) }}">templates/associations/index.html.twig</a></code></li>
-    </ul>
-</div>
+
 {% endblock %}

@@ -1,20 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello InformationsController!{% endblock %}
+{% block title %}Informations de la mairie{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/thibault/ProjetMairieV2/src/Controller/InformationsController.php'|file_link(0) }}">src/Controller/InformationsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/thibault/ProjetMairieV2/templates/informations/index.html.twig'|file_link(0) }}">templates/informations/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <section id="secinfos">
+        <img id="infosimg" src="{{ asset('assets/static/image/informations-1.png') }}" alt="Infos">
+        <div class="décoration"></div>
+        <h1 id="h1infos">Informations de la mairie</h1>
+    </section>
+    <section id="allInfos">
+        {% for info in infos %}
+    <div class="card">
+        <img id="imgAllInfos" src="{{asset('assets/static/image/uploads/' ~ info.picture)}}" class="card-img-top"
+            alt="{{ info.title }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ info.title }}</h5>
+            <div id="dateAllInfos">
+                <p class="card-text"><span class="textAllInfos">Du :</span> {{ info.startDate|date('d/m/y') }}
+                </p>
+                <p class="card-text"><span class="textAllInfos">Au :</span> {{ info.endDate|date('d/m/y') }}
+                </p>
+            </div>
+            <div id="heureAllInfos">
+                <p class="card-text"><span class="textAllInfos">De :</span> {{ info.startTime|date('H:i') }}
+                </p>
+                <p class="card-text"><span class="textAllInfos">A :</span> {{ info.endTime|date('H:i') }}</p>
+            </div>
+            <p id="addresseAllInfos" class="card-text"><span class="textAllInfos">Endroit concerné(s) :</span> {{
+                info.concernedPlace }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    </section>
 {% endblock %}

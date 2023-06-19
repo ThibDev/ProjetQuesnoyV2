@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte d'identité{% endblock %}
+
+{% block body %}
+    <section id="secidentite">
+        <img id="identiteimg" src="{{ asset('assets/static/image/identité.png') }}" alt="Carte d'identité">
+        <div class="décoration"></div>
+        <h1 id="h1identite">Carte d'identité</h1>
+    </section>
+    <section id="infosidentite">
+        <p class="pIdentite"><span class="pTitreIdentite">Coût :</span> Gratuit. </p>
+        <p class="pIdentite"><span class="pTitreIdentite">Délai environ :</span> 45 jours </p>
+        <p class="pTitreIdentite">Personnes Majeures : </p>
+        <p class="pTitreIdentite">Pièces à fournir obligatoirement : </p>
+        <li class="pIdentite">L' ancienne carte d'identité. copie intégrale d'acte de naissance et du livret de famille des parents. </li>
+        <li class="pIdentite">2 photos d'identité (35mm x 45mm) récentes de face, tête nue, sur fond blanc. Les photos scannées ne seront pas acceptées. </li>
+        <li class="pIdentite">Une pièce justifiant du domicile (facture de gaz, eau, électricité, téléphone, loyer ou avis d'imposition) 
+            datant de moins de 3 mois. pour les personnes majeures résidant chez des parents ou des tiers. une facture de moins de 
+            3 mois (gaz, électricité, téléphone...) de l'hébergeant. 
+        </li>
+        <li class="pIdentite">Une attestation de résidence établie par l'hébergeant avec sa pièce d'identité. une pièce administrative au nom du demandeur 
+            (carte de mutuelle,d'assuré social, récépissé d'allocations familiales, allocations chômage). 
+        </li>
+        <p class="pTitreIdentite">Pièces à fournir éventuellement : </p>
+        <li class="pIdentite">Le livret de famille (si l'indication de la mention épouse ou veuve est demandée). </li>
+        <li class="pIdentite">Le jugement de divorce pour la femme divorcée (si l'intéressée est autorisée à porter le nom de son ex-époux) ou l'autorisation écrite de celui-ci. </li>
+        <li class="pIdentite">Une demande écrite et les justificatifs du nom d'usage ( si la mention en est sollicitée). </li>
+        <li class="pIdentite">Un document prouvant la nationalité française (expl. décret de naturalisation, certificat de nationalité, etc..). le récépissé de déclaration de perte ou de vol de la carte nationale d'identité
+            (la déclaration de perte peut-être faite en mairie). 
+        </li>
+        <p class="pTitreIdentite">Personnes mineures : </p>
+        <p class="pTitreIdentite">Pièces à fournir obligatoirement : </p>
+        <li class="pIdentite">L'autorisation du représentant légal pour mineur non émancipé. </li>
+        <li class="pIdentite">L'ancienne carte d'identité (en cas de renouvellement). </li>
+        <li class="pIdentite">La copie intégrale de l'acte de naissance (récent) et le livret de famille des parents. </li>
+        <li class="pIdentite">2 photos d'identité (35mm x 45mm) récentes de face, tête nue, sur fond blanc. Les photos scannées ne seront pas acceptées. </li>
+        <li class="pIdentite">Une pièce justifiant du domicile (facture de gaz, eau, électricité, téléphone, loyer ou avis d'imposition) datant de moins de 3 mois. </li>
+        <li class="pIdentite">La carte d'identité du représentant légal. </li>
+        <p class="pTitreIdentite">Pièces à fournir éventuellement : </p>
+        <li class="pIdentite">Un document prouvant la nationalité française (expl. décret de naturalisation, certificat de nationalité, etc..). </li>
+        <li class="pIdentite">En cas de divorce ou séparation de corps des parents, fournir le jugement de garde (ou l'ordonnance du juge si instance en cours). </li>
+        <li class="pIdentite">En cas d'exercice conjoint de l'autorité parentale par des parents naturels, fournir la déclaration effectuée devant le juge des tutelles ou la décision du juge des affaires familiales. </li>
+        <li class="pIdentite">En cas de transfert ou de délégation de l'autorité parentale fournir la décision de justice pronoçant le transfert ou la délégation. </li>
+        <li class="pIdentite">En cas de tutelle, fournir la délibération du conseil de famille ou la décision de justice désignant le tuteur. </li>
+        <li class="pIdentite">Le récépissé de déclaration de perte ou de vol de la carte nationale d'identité (la déclaration de perte peut-être faite en mairie).</li>
+        <p class="pTitreIdentite">Pour effectuer un pré remplissage en ligne : <a href="https://www.service-public.fr/particuliers/vosdroits/R45668">https://www.service-public.fr/particuliers/vosdroits/R45668</a> </p>
+
+
+    </section>
+
+{% endblock %}

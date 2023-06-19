@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Mairie{% endblock %}
+
+{% block body %}
+    <section id="secMairie">
+        <img id="Mairieimg" src="{{ asset('assets/static/image/Mairie1.JPG') }}" alt="Mairie">
+        <div class="décoration"></div>
+        <h1 id="h1Mairie">La Mairie</h1>
+    </section>
+    <section id="infosMairie">
+        <div id="carouselMairie" class="carousel slide" data-bs-ride="carousel" style="margin: auto;width: 65%;">
+            <button style="background-color:black" id="CarouMairiePrev" class="carousel-control-prev" type="button"
+                data-bs-target="#carouselMairie" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img style="height:400px;width:200px" src="{{asset('assets/static/image/Mairie1.JPG')}}" class="d-block w-100" alt="Mairie">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:200px" src="{{asset('assets/static/image/mairie+église.JPG')}}" class="d-block w-100" alt="Mairie">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:200px" src="{{asset('assets/static/image/bursec1.JPG')}}" class="d-block w-100" alt="Mairie">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:200px" src="{{asset('assets/static/image/bursec2.JPG')}}" class="d-block w-100" alt="Mairie">   
+                </div>
+            </div>
+            <button style="background-color:black" id="CarouMairieNext" class="carousel-control-next" type="button"
+                data-bs-target="#carouselMairie" data-bs-slide="next">
+                <span style="color:black" class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span style="color:black" class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <p class="pTitreMairie" style="margin-top: 50px;">Contact :</p>
+        <li class="pMairie">Mail : commune-le-quesnoy-en-artois@wanadoo.fr</li>
+        <li class="pMairie">Téléphone : 03 21 86 81 93</li>
+        <p class="pTitreMairie">Adresse :</p>
+        <li class="pMairie">1 place de l'Église 62140 Le Quesnoy-en-Artois</li>
+        <p class="pTitreMairie">Horaires  :</p>
+        <li class="pMairie">Le Lundi : de 10h00 à 12h00</li>
+        <li class="pMairie">Le Vendredi : de 15h00 à 19h00</li>
+    </section>
+{% endblock %}

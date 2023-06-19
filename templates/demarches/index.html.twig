@@ -1,20 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DemarchesController!{% endblock %}
+{% block title %}Démarches Administratives{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/thibault/ProjetMairieV2/src/Controller/DemarchesController.php'|file_link(0) }}">src/Controller/DemarchesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/thibault/ProjetMairieV2/templates/demarches/index.html.twig'|file_link(0) }}">templates/demarches/index.html.twig</a></code></li>
-    </ul>
-</div>
+<h1 id="h1demarches">Démarches Administratives</h1>
+<section id="demarches">
+    <div class="demarchessep">
+        <div class="demarche">
+            <a href="{{path('demarches_carte_identite')}}"><img class="imgl" src="{{ asset('assets/static/image/identité.png') }}" alt="Carte d'identité"></a>
+            <p class="pdemarches">Carte d'identité</p>
+        </div>
+        <div class="demarche">
+            <a href="{{path('demarches_carte_grise')}}"><img class="imgl" src="{{ asset('assets/static/image/cartegrise.jpg') }}" alt="Carte Grise"></a>
+            <p class="pdemarches">Carte grise</p>
+        </div>
+        <div class="demarche">
+            <a href="{{path('demarches_carte_electorale')}}"><img class="imgl" src="{{ asset('assets/static/image/élections.jpg') }}" alt="Carte éléctorale"></a>
+            <p class="pdemarches">Carte électorale</p>
+        </div>
+    </div>
+    <div class="demarchessep">
+        <div class="demarche">
+            <a href="{{path('demarches_naissance')}}"><img class="imgh" src="{{ asset('assets/static/image/naissance.png') }}" alt="Acte de naissance"></a>
+            <p class="pdemarches">Naissance</p>
+        </div>
+        <div class="demarche">
+            <a href="{{path('demarches_mariage')}}"><img class="imgh" src="{{ asset('assets/static/image/mariage.jfif') }}" alt="Acte de mariage"></a>
+            <p class="pdemarches">Mariage</p>
+        </div>
+        <div class="demarche">
+            <a href="{{path('demarches_passeport')}}"><img class="imgh" src="{{ asset('assets/static/image/passeport.png') }}" alt="Passeport"></a>
+            <p class="pdemarches">Passeport</p>
+        </div>
+    </div>
+    <div class="demarchessep">
+        <div class="demarche">
+            <a href="{{path('demarches_recenssement')}}"><img class="imgl" src="{{ asset('assets/static/image/recensement.jpg') }}" alt="Recenssement"></a>
+            <p class="pdemarches">Recenssement</p>
+        </div>
+        <div class="demarche">
+            <a href="{{path('demarches_deces')}}"><img class="imgh" src="{{ asset('assets/static/image/decès.jpg') }}" alt="Acte de décès"></a>
+            <p class="pdemarches">Décès</p>
+        </div>
+        <div class="demarche">
+            <a href="{{path('demarches_conservation')}}"><img class="imgl" src="{{ asset('assets/static/image/conservation.jpg') }}" alt="Conservation des documents"></a>
+            <p class="pdemarches">Conservation des documents</p>
+        </div>
+    </div>
+</section>
 {% endblock %}

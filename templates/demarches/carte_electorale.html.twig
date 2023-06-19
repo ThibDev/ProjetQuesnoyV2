@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte electorale{% endblock %}
+
+{% block body %}
+    <section id="seccarteelectorale">
+        <img id="carteelectoraleimg" src="{{ asset('assets/static/image/élections.jpg') }}" alt="Carte electorale">
+        <div class="décoration"></div>
+        <h1 id="h1carteelectorale">Carte Electorale</h1>
+    </section>
+    <section id="infoscarteelectorale">
+        <p class="pcarteelectorale">L'inscription sur les listes électorales <span class="pTitrecarteelectorale">est obligatoire et indispensable pour pouvoir voter.</span></p>
+        <p class="pTitrecarteelectorale">Lieu et période d'inscription :</p>
+        <p class="pcarteelectorale">L'inscription a lieu en Mairie durant toute l'année (du 1er Janvier au 31 Décembre) 
+            mais ne prendra effet qu'à partir du 1er Mars de l'année suivante. L'inscription est d'office 
+            si les jeunes gens et jeunes filles se sont recensés pour la journée d'appel à la défense à leurs 16 ans, 
+            sinon ils doivent se présenter à la Mairie de la résidence au moment de leur majorité. 
+        </p>
+        <p class="pTitrecarteelectorale">Quelles conditions remplir ?</p>
+        <li class="pcarteelectorale">Posséder la nationalité Française.</li>
+        <li class="pcarteelectorale">Etre âgé de 18 ans au cours de l'année d'inscription ou atteindre 18 ans avant le 1er Mars de l'année qui suit.</li>
+        <li class="pcarteelectorale">Ne pas être déchu de ses droits civiques et politiques.</li>
+        <li class="pcarteelectorale">Justifier d'une attache avec la commune d'inscription (domicile légal ou inscription pour la 5ème année consécutive au rôle d'une des contributions directes communales). </li>
+        <p class="pTitrecarteelectorale">Quels documents présenter ?</p>
+        <li class="pcarteelectorale">Une pièce d'identité (Carte nationale d'identité ou certificat de nationalité française ou passeport en cours de validité)</li>
+        <li class="pcarteelectorale">Une pièce justifiant de votre domicile dans la commune, ou un certificat d'inscription au rôle des contributions directes locales faisant apparaître votre qualité de contribuable communal depuis au moins 5 années consécutives.</li>
+        <p class="pTitrecarteelectorale">Procédure d'inscription:</p>
+        <p class="pcarteelectorale">Pour une première inscription, il vous sera demandé de présenter un justificatif de nationalité française.</p>
+        <p class="pTitrecarteelectorale">Changement de domicile:</p>
+        <p class="pTitrecarteelectorale">Vous venez de déménager dans Le Quesnoy en Artois :</p>
+        <li class="pcarteelectorale">Signalez immédiatement votre changement d'adresse au Secrétariat de la mairie et veuillez présenter un justificatif de domicile (quittance EDF- GDF - téléphone, loyer) .</li>
+        <p class="pTitrecarteelectorale">Vous venez de vous installer à Le Quesnoy en Artois :</p>
+        <li class="pcarteelectorale">Votre inscription sur la liste électorale de la commune n'est pas automatique, elle nécessite de votre part une démarche volontaire. </li>
+        <p class="pTitrecarteelectorale">Vous quittez Le Quesnoy en Artois :</p>
+        <li class="pcarteelectorale">Votre inscription sur la liste électorale de votre nouvelle commune de résidence entraînera automatiquement votre radiation à Le Quesnoy en Artois.</li>
+        <p class="pTitrecarteelectorale">Carte d'électeur :</p>
+        <li class="pcarteelectorale">Elle est distribuée au domicile de l'électeur au plus tard 3 jours avant le scrutin.</li>
+        <li class="pcarteelectorale"><span class="pTitrecarteelectorale">ATTENTION :</span> Les services postaux ne font pas suivre le courrier électoral.</li>
+        <li class="pcarteelectorale">Les cartes non distribuées sont retournées en Mairie et peuvent être remises dans le bureau de vote lors des scrutins.</li>
+        <li class="pcarteelectorale">En cas de perte ou de vol, une attestation d'inscription sur la liste électorale est fournie.</li>
+        <li class="pcarteelectorale">La carte électorale n'est pas obligatoire pour voter.</li>
+        <p class="pTitrecarteelectorale">CAS PARTICULIER :</p>
+        <p class="pTitrecarteelectorale">Ressortissants d'un pays membre de l'Union Européenne :</p>
+        <li class="pcarteelectorale">Les citoyens de l'Union Européenne résidant en France peuvent participer aux élections municipales et européennes. Pour se faire ils doivent se faire inscrire sur les listes électorales complémentaires.</li>
+        <p class="pTitrecarteelectorale">Conditions :</p>
+        <li class="pcarteelectorale">Jouir de la capacité électorale dans leur pays d'origine.</li>
+        <li class="pcarteelectorale">Remplir les conditions légales autres que la nationalité française, pour être inscrit sur la liste électorale générale.</li>
+    </section>
+
+{% endblock %}

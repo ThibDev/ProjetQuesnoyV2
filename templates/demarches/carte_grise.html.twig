@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte grise{% endblock %}
+
+{% block body %}
+    <section id="seccartegrise">
+        <img id="cartegriseimg" src="{{ asset('assets/static/image/cartegrise.jpg') }}" alt="Carte grise">
+        <div class="décoration"></div>
+        <h1 id="h1cartegrise">Carte grise</h1>
+    </section>
+    <section id="infoscartegrise">
+        <p class="pcartegrise">Toutes les procédures relatives à la carte grise sont maintenant numérisées.</p>
+        <p class="pcartegrise">Elles ne sont donc plus reçues par les Préfectures et Sous-Préfectures. </p>
+        <p class="pcartegrise">Pour effectuer un changement d'adresse sur le certificat d'immatriculation, les deux possibilités qui s'offrent à vous sont : </p>
+            <li class="pTitrecartegrise">En ligne, à l'adresse : <a href="https://immatriculation.ants.gouv.fr">https://immatriculation.ants.gouv.fr</a></li>
+            <li class="pTitrecartegrise">Auprès d'un garagiste agréé au SIV (Système d'Immatriculation des Véhicules) : <a href="https://www.service-public.fr/particuliers/vosdroits/F12118#:~:text=Vous%20devez%20demander%20une%20nouvelle,doit%20%C3%AAtre%20effectu%C3%A9e%20sur%20internet.&text=sa%20carte%20grise-,Un%20dispositif%20de%20copie%20num%C3%A9rique%20(scanner%2C%20appareil%20photo%20num%C3%A9rique%2C,une%20fonction%20photo)%20est%20n%C3%A9cessaire.">Guide des démarches </a></li>
+    </section>
+
+{% endblock %}

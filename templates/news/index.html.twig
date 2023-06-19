@@ -1,20 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello NewsController!{% endblock %}
+{% block title %}Actualités{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/thibault/ProjetMairieV2/src/Controller/NewsController.php'|file_link(0) }}">src/Controller/NewsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/thibault/ProjetMairieV2/templates/news/index.html.twig'|file_link(0) }}">templates/news/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <h1 id="h1AllActus">Toutes les Actualités</h1>
+    <section id="allActus">
+        {% for new in news %}
+        <div class="card">
+            <img id="imgAllActus" src="{{asset('assets/static/image/uploads/' ~ new.picture)}}" class="card-img-top" alt="{{ new.title }}">
+            <div class="card-body">
+            <h5 class="card-title">{{ new.title }}</h5>
+            <p class="card-text">{{ new.description }}</p>
+        </div>
+  </div>
+{% endfor %}
+    </section>
 {% endblock %}

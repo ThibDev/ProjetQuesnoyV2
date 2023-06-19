@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les élu(e)s{% endblock %}
+
+{% block body %}
+    <section id="secElus">
+        <img id="Elusimg" src="{{ asset('assets/static/image/conseillers.jpg') }}" alt="Elu(e)s">
+        <div class="décorationElus"></div>
+        <h1 id="h1Elus">Les élu(e)s</h1>
+    </section>
+    <section id="infosElus">
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/gilbertpihet.JPG') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Gilbert PIHET</h3>
+                <p class="roleElu">1er adjoint</p>
+                <div class="fonctionsElu">
+                    <p class="pElu">Fonctions :</p>
+                    <li>Pour l'ordonnance des finances (recettes, dépenses, salaire, budget)</li>
+                    <li>État Civil</li>
+                </div>
+            </div>
+        </div>
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/lucgeiger.JPG') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Luc GEIGER</h3>
+                <p class="roleElu">2ème adjoint</p>
+                <div class="fonctionsElu">
+                    <p class="pElu">Fonctions :</p>
+                    <li>Travaux, entretien des bâtiments</li>
+                    <li>Affaires sociales</li>
+                    <li>Urbanisme</li>
+                </div>
+            </div>
+        </div>
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/arnaudroussel.JPG') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Arnaud ROUSSEL</h3>
+                <p class="roleElu">3ème adjoint</p>
+                <div class="fonctionsElu">
+                    <p class="pElu">Fonctions :</p>
+                    <li>Voiries</li>
+                    <li>Fêtes et sports</li>
+                </div>
+            </div>
+        </div>
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/xavierchoquet.JPG') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Xavier CHOQUET</h3>
+                <p class="pElu">Conseiller municipal</p>
+            </div>
+        </div>
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/claudetoupet.JPG') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Claude TOUPER</h3>
+                <p class="pElu">Conseiller municipal</p>
+            </div>
+        </div>
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/jeanmarcthibaut.JPG') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Jean-marc THIBAULT</h3>
+                <p class="pElu">Conseiller municipal</p>
+            </div>
+        </div>
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/elu.png') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Laurence BIGNET</h3>
+                <p class="pElu">Conseillère municipal</p>
+            </div>
+        </div>
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/elu.png') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Séverine CREPY</h3>
+                <p class="pElu">Conseillère municipal</p>
+            </div>
+        </div>
+        <div class="Elu">
+            <img class="photoElu" src="{{ asset('assets/static/image/elu.png') }}" alt="Elu(e)">
+            <div class="txtElu">
+                <h3 class="hElu">Benoit ETIENNE</h3>
+                <p class="pElu">Conseiller municipal</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,20 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EventsController!{% endblock %}
+{% block title %}Evènements{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/thibault/ProjetMairieV2/src/Controller/EventsController.php'|file_link(0) }}">src/Controller/EventsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/thibault/ProjetMairieV2/templates/events/index.html.twig'|file_link(0) }}">templates/events/index.html.twig</a></code></li>
-    </ul>
-</div>
+<h1 id="h1AllEvents">Tous les Evènements</h1>
+<section id="allEvents">
+    {% for event in events %}
+    <div class="card" style="width: 18rem;margin-right: 8%;margin-top: 60px;">
+        <img id="imgAllEvents" src="{{asset('assets/static/image/uploads/' ~ event.picture)}}" class="card-img-top"
+            alt="{{ event.title }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ event.title }}</h5>
+            <div id="dateAllEvent">
+                <p class="card-text"><span class="textAllEvents">Du :</span> {{ event.startDate|date('d/m/y') }}
+                </p>
+                <p class="card-text"><span class="textAllEvents">Au :</span> {{ event.endDate|date('d/m/y') }}
+                </p>
+            </div>
+            <div id="heureAllEvent">
+                <p class="card-text"><span class="textAllEvents">De :</span> {{ event.startTime|date('H:i') }}
+                </p>
+                <p class="card-text"><span class="textAllEvents">A :</span> {{ event.endTime|date('H:i') }}</p>
+            </div>
+            <p id="addresseAllEvent" class="card-text"><span class="textAllEvents">Adresse :</span> {{
+                event.address }}</p>
+            <p id="organiseEvent" class="card-text"><span class="textAllEvents">Organisé par :</span> {{
+                event.organizedBy }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
 {% endblock %}

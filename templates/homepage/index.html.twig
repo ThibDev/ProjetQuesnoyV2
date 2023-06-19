@@ -3,5 +3,82 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+<style>
+    .example-wrapper {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+
+    .example-wrapper code {
+        background: #F5F5F5;
+        padding: 2px 6px;
+    }
+</style>
+<h2 id="h1Acceuil">Actualités</h2>
+
+<section id="Actualités">
+{% for new in news %}
+<div class="card" style="width: 18rem;">
+    <img src="{{asset('assets/static/image/uploads/' ~ new.picture)}}" class="card-img-top" alt="{{ new.title }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ new.title }}</h5>
+      <p class="card-text">{{ new.description }}</p>
+    </div>
+  </div>
+{% endfor %}
+</section>
+<div id="btnActus">
+    <a href="{{path('all_news')}}"><button id="btn1Accueil" class="btn">Voir toutes les actualités</button></a>
+</div>
+<h2 id="h2Acceuil">Evènements</h2>
+<section id="Evènement">
+    <div id="carouselEvenements" class="carousel slide" data-bs-ride="carousel">
+        <button style="background-color:black" id="CarouEventsPrev" class="carousel-control-prev" type="button"
+            data-bs-target="#carouselEvenements" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <div class="carousel-inner">
+            {% for event in events %}
+            <div class="carousel-item active">
+                <div id="CarouEvent">
+                    <img style="height:300px;width:300px" src="{{asset('assets/static/image/uploads/' ~ event.picture)}}"
+                        class="d-block w-100" alt="{{ event.title }}">
+                    <div class="card" style="width: 35rem;border:0">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ event.title }}</h5>
+                            <div id="dateEvent">
+                                <p class="card-text"><span class="textCarou">Du :</span> {{ event.startDate|date('d/m/y') }}
+                                </p>
+                                <p class="card-text"><span class="textCarou">Au :</span> {{ event.endDate|date('d/m/y') }}
+                                </p>
+                            </div>
+                            <div id="heureEvent">
+                                <p class="card-text"><span class="textCarou">De :</span> {{ event.startTime|date('H:i') }}
+                                </p>
+                                <p class="card-text"><span class="textCarou">A :</span> {{ event.endTime|date('H:i') }}</p>
+                            </div>
+                            <p id="addresseEvent" class="card-text"><span class="textCarou">Adresse :</span> {{
+                                event.address }}</p>
+                            <p id="organiseEvent" class="card-text"><span class="textCarou">Organisé par :</span> {{
+                                event.organizedBy }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button style="background-color:black" id="CarouEventsNext" class="carousel-control-next" type="button"
+            data-bs-target="#carouselEvenements" data-bs-slide="next">
+            <span style="color:black" class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span style="color:black" class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<div id="btnEven">
+    <a href="{{path('all_events')}}"><button id="btn2Accueil" class="btn">Voir tous les évènements</button></a>
+</div>
 
 {% endblock %}

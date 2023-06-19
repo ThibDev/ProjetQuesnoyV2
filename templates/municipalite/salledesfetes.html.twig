@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Salle des fêtes{% endblock %}
+
+{% block body %}
+    <section id="secSalle">
+        <img id="Salleimg" src="{{ asset('assets/static/image/sdfext2.JPG') }}" alt="Salle des fêtes">
+        <div class="décoration"></div>
+        <h1 id="h1Salle">La Salle des fêtes</h1>
+    </section>
+    <section id="infosSalle">
+        <div id="carouselSalle" class="carousel slide" data-bs-ride="carousel" style="margin: auto;width: 65%;">
+            <button style="background-color:black" id="CarouSallePrev" class="carousel-control-prev" type="button"
+                data-bs-target="#carouselSalle" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/sdfext1.JPG')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/sdfext2.JPG')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/sdfext3.JPG')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/sdfint1.JPG')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/sdfint2.JPG')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/cuisine1.JPG')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/cuisine2.JPG')}}" class="d-block w-100" alt="Salle">   
+                </div>
+                <div class="carousel-item ">
+                    <img style="height:400px;width:300px" src="{{asset('assets/static/image/cuisine3.JPG')}}" class="d-block w-100" alt="Salle">   
+                </div>
+            </div>
+            <button style="background-color:black" id="CarouSalleNext" class="carousel-control-next" type="button"
+                data-bs-target="#carouselSalle" data-bs-slide="next">
+                <span style="color:black" class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span style="color:black" class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <p class="pTitreSalle" style="margin-top: 50px;">Adresse :</p>
+        <li class="pSalle">1 place de l'Église 62140 Le Quesnoy-en-Artois</li>
+        <p class="pTitreSalle">Location  :</p>
+        <li class="pSalle">Habitants de la commune : </li>
+        <li class="pSalle">Personnes Extérieurs : </li>
+    </section>
+{% endblock %}

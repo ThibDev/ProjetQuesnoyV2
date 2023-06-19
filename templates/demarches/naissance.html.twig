@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acte de Naissance{% endblock %}
+
+{% block body %}
+    <section id="secnaissance">
+        <img id="naissanceimg" src="{{ asset('assets/static/image/naissance.png') }}" alt="Acte de Naissance">
+        <div class="décoration"></div>
+        <h1 id="h1naissance">Acte de Naissance</h1>
+    </section>
+    <section id="infosnaissance">
+        <p class="pTitrenaissance">Qui doit déclarer ?  </p>
+        <p class="pnaissance">L'article 56 du Code Civil prévoit que la responsabilité de la déclaration incombe au père, aux médecins, sages-femmes ou autres personnes ayant assisté à l'accouchement. Mais il est fréquent que le déclarant soit un membre de la famille, personne majeure porteur du certificat d'accouchement, du livret de famille lorsque celui-ci existe. 
+        </p>
+        <p class="pTitrenaissance">Quand déclarer ?</p>
+        <p class="pnaissance">Dans les 3 jours qui suivent l'accouchement. Le jour de l'accouchement n'est pas compté dans ce délai de 3 jours; de plus, lorsque le dernier jour dudit délai est un samedi, un dimanche ou un jour férié, ce délai est prolongé jusqu'au premier jour ouvrable suivant.</p>
+        <p class="pTitrenaissance">Où déclarer ?</p>
+        <p class="pnaissance">A la mairie du lieu où l'évènement s'est produit. </p>
+        <p class="pTitrenaissance">Pièces à présenter :</p>
+        <li class="pnaissance">le certificat médical d'accouchement.</li>
+        <li class="pnaissance">le livret de famille (pour les personnes mariées). </li>
+        <li class="pnaissance">le livret de famille ou les cartes d'identité du père et de la mère (pour les parents naturels).</li>
+        <li class="pnaissance">le livret de famille ou la carte d'identité (pour les mères naturelles).</li>
+        <li class="pnaissance">si l'enfant a fait l'objet d'une reconnaissance antérieure à la naissance par le père, la mère ou les deux parents, une copie de la (ou des) reconnaissance(s) anticipée(s).</li>
+        <li class="pnaissance">lorsqu'une naissance n'aura pas été déclarée dans le délai légal, l'officier d'état-civil ne pourra l'inscrire sur les registres qu'en vertu d'un jugement rendu par le tribunal de grande instance de l'arrondissement dans lequel l'enfant est né. La transcription du jugement sur les registres tiendra lieu de l'acte omis.</li>
+        <p class="pTitrenaissance">Extrait ou copie d'acte de naissance</p>
+        <p class="pTitrenaissance">Obtention :</p>
+        <li class="pnaissance">A la mairie du lieu de naissance.</li>
+        <p class="pTitrenaissance">Documents à présenter :</p>
+        <li class="pnaissance">Demande écrite et signée précisant le nom, prénom, date de naissance, l'identité du demandeur et son lien de parenté (Joindre une enveloppe timbrée à votre adresse pour la réponse).</li>
+        <p class="pTitrenaissance">Extrait ou copie d'acte de naissance de Français nés à l'étranger:</p>
+        <p class="pTitrenaissance">Obtention :</p>
+        <li class="pnaissance">Service Central de l'État Civil 
+            BP 1056 
+            44941 Nantes cedex 9 
+            Indiquer nom, prénom et date, lieu de naissance.</li>
+        </section>
+
+{% endblock %}

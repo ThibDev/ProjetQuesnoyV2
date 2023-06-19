@@ -1,20 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MunicipaliteController!{% endblock %}
+{% block title %}Municipalité{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/thibault/ProjetMairieV2/src/Controller/MunicipaliteController.php'|file_link(0) }}">src/Controller/MunicipaliteController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/thibault/ProjetMairieV2/templates/municipalite/index.html.twig'|file_link(0) }}">templates/municipalite/index.html.twig</a></code></li>
-    </ul>
-</div>
+<h1 id="h1municipalité">Municipalité</h1>
+<section id="sec1">
+    <div id="maireAcc">
+        <a href="{{ path('municipalité_maire') }}"><img class="imgmunicipalite" src="{{ asset('assets/static/image/georgesboulenger.JPG') }}" alt="Maire"></a>
+        <p class="pmunicipalite">Mr le maire</p>
+    </div>
+    <div id="separation"></div>
+    <div id="elusAcc">
+        <a href="{{ path('municipalité_elus') }}"><img class="imgmunicipalite" src="{{ asset('assets/static/image/conseillers.jpg') }}" alt="Elus"></a>
+        <p class="pmunicipalite">Les élu(e)s</p>
+    </div>
+</section>
+<section id="mairie">
+    <a href="{{ path('municipalité_mairie') }}"><img src="{{ asset('assets/static/image/mairie+église.JPG') }}" alt="mairie" class="imgmunicipalite"></a>
+    <p class="pmunicipalite">La mairie</p>
+</section>
+<section id="salledesfetes">
+    <a href="{{ path('municipalité_salledesfetes') }}"><img src="{{ asset('assets/static/image/sdfext1.JPG') }}" alt="salledesfetes" class="imgmunicipalite"></a>
+    <p class="pmunicipalite">La salle des fêtes</p>
+</section>
+<section id="informations">
+    <a href="{{ path('municipalité_informations') }}"><img src="{{ asset('assets/static/image/informations-1.png') }}" alt="informations" class="imgmunicipalite"></a>
+    <p class="pmunicipalite">Informations de la mairie</p>
+</section>
 {% endblock %}
